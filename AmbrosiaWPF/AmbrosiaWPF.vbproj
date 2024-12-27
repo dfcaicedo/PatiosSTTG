@@ -1,0 +1,760 @@
+﻿<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C32198D1-D63E-437E-B61F-0ACAFE3C0986}</ProjectGuid>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>AmbrosiaWPF</RootNamespace>
+    <AssemblyName>AmbrosiaWPF</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <IncrementalBuild>true</IncrementalBuild>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>AmbrosiaWPF.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42314</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <IncrementalBuild>false</IncrementalBuild>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>AmbrosiaWPF.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42314</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942" />
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.4.0\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Google.Protobuf, Version=3.27.3.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.27.3\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.3.8.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.1.3.8\lib\net462\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.3.8.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.3.8\lib\net462\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.8.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Hash.xxHash.1.0.8\lib\net462\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=9.0.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.9.0.0\lib\net462\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.8.0.0\lib\net462\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=8.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.8.0.1\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Pipelines, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Pipelines.8.0.0\lib\net462\System.IO.Pipelines.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Windows.Forms.DataVisualization.Design" />
+    <Reference Include="System.Windows.Input.Manipulations" />
+    <Reference Include="System.Windows.Presentation" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="Zstandard.Net, Version=1.1.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d" />
+    <Reference Include="ZstdSharp, Version=0.8.1.0, Culture=neutral, PublicKeyToken=8d151af33a4ad5cf, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZstdSharp.Port.0.8.1\lib\net462\ZstdSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="Application.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Administracion\Importados\Capacidad.designer.vb">
+      <DependentUpon>Capacidad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\Importados\Capacidad.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administracion\Importados\Cargos.designer.vb">
+      <DependentUpon>Cargos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\Importados\Cargos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administracion\Importados\Empleados.designer.vb">
+      <DependentUpon>Empleados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\Importados\Empleados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administracion\Importados\MonedasActivas.designer.vb">
+      <DependentUpon>MonedasActivas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\Importados\MonedasActivas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administracion\Importados\Parqueaderos.designer.vb">
+      <DependentUpon>Parqueaderos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\Importados\Parqueaderos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administracion\Importados\Permisos.designer.vb">
+      <DependentUpon>Permisos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\Importados\Permisos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administracion\Importados\Puntos de Atención.designer.vb">
+      <DependentUpon>Puntos de Atención.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\Importados\Puntos de Atención.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administracion\Importados\Tipo de Servicios.designer.vb">
+      <DependentUpon>Tipo de Servicios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\Importados\Tipo de Servicios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administracion\Importados\Tipo de Vehiculos.designer.vb">
+      <DependentUpon>Tipo de Vehiculos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\Importados\Tipo de Vehiculos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administracion\Importados\Tipos de Cliente.designer.vb">
+      <DependentUpon>Tipos de Cliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\Importados\Tipos de Cliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administracion\Importados\TipoValoresAdicionales.designer.vb">
+      <DependentUpon>TipoValoresAdicionales.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Administracion\Importados\TipoValoresAdicionales.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administracion\MenuAdministracion.xaml.vb">
+      <DependentUpon>MenuAdministracion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ambrosiapark_proDataSet.vb">
+      <DependentUpon>ambrosiapark_proDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FrontEnd\Aportes.xaml.vb">
+      <DependentUpon>Aportes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FrontEnd\Entrada.designer.vb">
+      <DependentUpon>Entrada.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrontEnd\Entrada.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrontEnd\ShowTime.xaml.vb">
+      <DependentUpon>ShowTime.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Generales\CambiodeClave.designer.vb">
+      <DependentUpon>CambiodeClave.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Generales\CambiodeClave.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Generales\CostoPatios.vb" />
+    <Compile Include="Gestion Comercial\Importados\Clientes.designer.vb">
+      <DependentUpon>Clientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion Comercial\Importados\Clientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestion Comercial\Importados\confpernoctar.designer.vb">
+      <DependentUpon>confpernoctar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion Comercial\Importados\confpernoctar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestion Comercial\Importados\CreaciondeUsuarios.designer.vb">
+      <DependentUpon>CreaciondeUsuarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion Comercial\Importados\CreaciondeUsuarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestion Comercial\Importados\CreacionServicios.designer.vb">
+      <DependentUpon>CreacionServicios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion Comercial\Importados\CreacionServicios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestion Comercial\Importados\CreacionServicios1.designer.vb">
+      <DependentUpon>CreacionServicios1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion Comercial\Importados\CreacionServicios1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestion Comercial\Importados\CreacionServicios2.designer.vb">
+      <DependentUpon>CreacionServicios2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion Comercial\Importados\CreacionServicios2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestion Comercial\Importados\CreacionUsuario1.designer.vb">
+      <DependentUpon>CreacionUsuario1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion Comercial\Importados\CreacionUsuario1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestion Comercial\Importados\CreacionUsuario2.designer.vb">
+      <DependentUpon>CreacionUsuario2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion Comercial\Importados\CreacionUsuario2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestion Comercial\Importados\CreacionUsuario3.designer.vb">
+      <DependentUpon>CreacionUsuario3.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion Comercial\Importados\CreacionUsuario3.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestion Comercial\Importados\DetalleValores.designer.vb">
+      <DependentUpon>DetalleValores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion Comercial\Importados\DetalleValores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestion Comercial\Importados\Pernoctar.designer.vb">
+      <DependentUpon>Pernoctar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion Comercial\Importados\Pernoctar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestion Comercial\Importados\RegistrodeTarifas.designer.vb">
+      <DependentUpon>RegistrodeTarifas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion Comercial\Importados\RegistrodeTarifas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestion Comercial\Importados\Servicios.designer.vb">
+      <DependentUpon>Servicios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion Comercial\Importados\Servicios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestion Comercial\Importados\testCostos.designer.vb">
+      <DependentUpon>testCostos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion Comercial\Importados\testCostos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestion Comercial\Importados\ValoresAdicionales.designer.vb">
+      <DependentUpon>ValoresAdicionales.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion Comercial\Importados\ValoresAdicionales.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestion Comercial\MenuComercial.xaml.vb">
+      <DependentUpon>MenuComercial.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion Comercial\Tarifas\Tarifas.xaml.vb" />
+    <Compile Include="Gestion Comercial\Tarifas\UpdateTarifa.xaml.vb">
+      <DependentUpon>UpdateTarifa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\cl_tipomod.vb" />
+    <Compile Include="Models\Co_tariMOD.vb" />
+    <Compile Include="Models\co_tsermod.vb" />
+    <Compile Include="Models\Tarifa.vb" />
+    <Compile Include="Models\vh_tiposmod.vb" />
+    <Compile Include="Reportes\VistaServicios.xaml.vb">
+      <DependentUpon>VistaServicios.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\VistaUltimasEntradas.xaml.vb">
+      <DependentUpon>VistaUltimasEntradas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\VistaUltimasSalidas.xaml.vb">
+      <DependentUpon>VistaUltimasSalidas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RPT\deudoresreport.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>deudoresreport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPT\Entradas.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Entradas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPT\EntradasRPT.Designer.vb">
+      <DependentUpon>EntradasRPT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RPT\EntradasRPT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RPT\EstadoActual.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EstadoActual.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPT\frmdeudores.Designer.vb">
+      <DependentUpon>frmdeudores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RPT\frmdeudores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RPT\Reportes.xaml.vb">
+      <DependentUpon>Reportes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RPT\RptEstadoActual.Designer.vb">
+      <DependentUpon>RptEstadoActual.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RPT\RptEstadoActual.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RPT\rptsaldos.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptsaldos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPT\RPTSalidas.Designer.vb">
+      <DependentUpon>RPTSalidas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RPT\RPTSalidas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RPT\RptServiciosFRM.Designer.vb">
+      <DependentUpon>RptServiciosFRM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RPT\RptServiciosFRM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RPT\RptTurnoFrm.Designer.vb">
+      <DependentUpon>RptTurnoFrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RPT\RptTurnoFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RPT\SaldosFRM.Designer.vb">
+      <DependentUpon>SaldosFRM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RPT\SaldosFRM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RPT\SalidasRPT.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SalidasRPT.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPT\ServiciosRPT.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ServiciosRPT.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPT\TurnosCompleto.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TurnosCompleto.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPT\TurnosResumen.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TurnosResumen.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Page Include="Administracion\MenuAdministracion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FrontEnd\Adicionales.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FrontEnd\Aportes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FrontEnd\ShowTime.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Generales\DbConfig.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Generales\frm_Tvehiculos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gestion Comercial\MenuComercial.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gestion Comercial\Tarifas\Tarifas.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gestion Comercial\Tarifas\UpdateTarifa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="ambrosiapark_proDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ambrosiapark_proDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Application.xaml.vb">
+      <DependentUpon>Application.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FrontEnd\Adicionales.xaml.vb">
+      <DependentUpon>Adicionales.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FrontEnd\Consultar.Designer.vb">
+      <DependentUpon>Consultar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrontEnd\Consultar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Generales\db.vb" />
+    <Compile Include="Generales\DbConfig.xaml.vb">
+      <DependentUpon>DbConfig.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Generales\frm_Tvehiculos.xaml.vb">
+      <DependentUpon>frm_Tvehiculos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Generales\ProcesoCostos.vb" />
+    <Compile Include="Generales\TripleDES.vb" />
+    <Compile Include="MainWindow.xaml.vb">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="MenuPrincipal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Reportes\VistaServicios.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Reportes\VistaUltimasEntradas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Reportes\VistaUltimasSalidas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RPT\Reportes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="System.Threading.Tasks" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows" />
+    <Import Include="System.Windows.Controls" />
+    <Import Include="System.Windows.Data" />
+    <Import Include="System.Windows.Documents" />
+    <Import Include="System.Windows.Input" />
+    <Import Include="System.Windows.Shapes" />
+    <Import Include="System.Windows.Media" />
+    <Import Include="System.Windows.Media.Imaging" />
+    <Import Include="System.Windows.Navigation" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MenuPrincipal.xaml.vb">
+      <DependentUpon>MenuPrincipal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model_Id_Desc.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWpfExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.WPF.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Administracion\Importados\Capacidad.resx">
+      <DependentUpon>Capacidad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administracion\Importados\Cargos.resx">
+      <DependentUpon>Cargos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administracion\Importados\Empleados.resx">
+      <DependentUpon>Empleados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administracion\Importados\MonedasActivas.resx">
+      <DependentUpon>MonedasActivas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administracion\Importados\Parqueaderos.resx">
+      <DependentUpon>Parqueaderos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administracion\Importados\Permisos.resx">
+      <DependentUpon>Permisos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administracion\Importados\Puntos de Atención.resx">
+      <DependentUpon>Puntos de Atención.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administracion\Importados\Tipo de Servicios.resx">
+      <DependentUpon>Tipo de Servicios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administracion\Importados\Tipo de Vehiculos.resx">
+      <DependentUpon>Tipo de Vehiculos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administracion\Importados\Tipos de Cliente.resx">
+      <DependentUpon>Tipos de Cliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administracion\Importados\TipoValoresAdicionales.resx">
+      <DependentUpon>TipoValoresAdicionales.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrontEnd\Entrada.resx">
+      <DependentUpon>Entrada.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generales\CambiodeClave.resx">
+      <DependentUpon>CambiodeClave.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestion Comercial\Importados\Clientes.resx">
+      <DependentUpon>Clientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestion Comercial\Importados\confpernoctar.resx">
+      <DependentUpon>confpernoctar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestion Comercial\Importados\CreaciondeUsuarios.resx">
+      <DependentUpon>CreaciondeUsuarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestion Comercial\Importados\CreacionServicios.resx">
+      <DependentUpon>CreacionServicios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestion Comercial\Importados\CreacionServicios1.resx">
+      <DependentUpon>CreacionServicios1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestion Comercial\Importados\CreacionServicios2.resx">
+      <DependentUpon>CreacionServicios2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestion Comercial\Importados\CreacionUsuario1.resx">
+      <DependentUpon>CreacionUsuario1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestion Comercial\Importados\CreacionUsuario2.resx">
+      <DependentUpon>CreacionUsuario2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestion Comercial\Importados\CreacionUsuario3.resx">
+      <DependentUpon>CreacionUsuario3.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestion Comercial\Importados\DetalleValores.resx">
+      <DependentUpon>DetalleValores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestion Comercial\Importados\Pernoctar.resx">
+      <DependentUpon>Pernoctar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestion Comercial\Importados\RegistrodeTarifas.resx">
+      <DependentUpon>RegistrodeTarifas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestion Comercial\Importados\Servicios.resx">
+      <DependentUpon>Servicios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestion Comercial\Importados\testCostos.resx">
+      <DependentUpon>testCostos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestion Comercial\Importados\ValoresAdicionales.resx">
+      <DependentUpon>ValoresAdicionales.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\deudoresreport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>deudoresreport.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\Entradas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Entradas.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrontEnd\Consultar.resx">
+      <DependentUpon>Consultar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\EntradasRPT.resx">
+      <DependentUpon>EntradasRPT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\EstadoActual.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EstadoActual.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\frmdeudores.resx">
+      <DependentUpon>frmdeudores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\RptEstadoActual.resx">
+      <DependentUpon>RptEstadoActual.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\rptsaldos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptsaldos.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\RPTSalidas.resx">
+      <DependentUpon>RPTSalidas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\RptServiciosFRM.resx">
+      <DependentUpon>RptServiciosFRM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\RptTurnoFrm.resx">
+      <DependentUpon>RptTurnoFrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\SaldosFRM.resx">
+      <DependentUpon>SaldosFRM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\SalidasRPT.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SalidasRPT.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\ServiciosRPT.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ServiciosRPT.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\TurnosCompleto.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TurnosCompleto.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\TurnosResumen.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TurnosResumen.vb</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="ambrosiapark_proDataSet.xsc">
+      <DependentUpon>ambrosiapark_proDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ambrosiapark_proDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ambrosiapark_proDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ambrosiapark_proDataSet.xss">
+      <DependentUpon>ambrosiapark_proDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="automobile-1300231_1280.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\automobile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="automobile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Base de Datos\AmbrosiaLimpia.sql" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>

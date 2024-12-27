@@ -1,0 +1,35 @@
+﻿<Window x:Class="MainWindow" Loaded="Window_Loaded"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AmbrosiaWPF"
+        mc:Ignorable="d"
+        Title="Control de Parqueadero" Height="500" Width="400" ResizeMode="NoResize" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Center" >
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF729068" Offset="0.652"/>
+            <GradientStop Color="White" Offset="0.278"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <StackPanel >
+        <Image Source="automobile.png" ></Image>
+        <Label Content="Control de Patios" Foreground="black" HorizontalContentAlignment="Center" FontSize="25" FontWeight="SemiBold"   ></Label>
+        <Border  CornerRadius="15" Background="#FF172F0F" Width="320" Height="203" Margin="5"  >
+            <StackPanel Width="300"   HorizontalAlignment="Center" Background="WhiteSmoke"  Height="184" Margin="10,10,10,9.2" >
+                <Label Content="Ingreso al Sistema" Background="#FF172F0F" HorizontalContentAlignment="Center" FontSize="18" Foreground="WhiteSmoke" FontStyle="Oblique" FontStretch="UltraExpanded" FontFamily="Yu Gothic UI Semibold" FontWeight="SemiBold" ></Label>
+                <Label Content="Usuario" HorizontalContentAlignment="Center" FontSize="16" FontWeight="bold"  ></Label>
+                <TextBox Name="UserText" Width="200"  TextAlignment="Center"></TextBox>
+                <Label Content="Contraseña" HorizontalContentAlignment="Center" FontWeight="bold" FontSize="16"  ></Label>
+                <PasswordBox Name="Passtext" Width="200"  PasswordChar="*" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"></PasswordBox>
+                <Border CornerRadius="15,15,15,15" Width="95" Background="#FF172F0F" Margin="10" Padding="3" >
+                    <Button Content="Ingresar" Width="80" Click="Button_Click" Background="Transparent" BorderThickness="0" Foreground="White" FontSize="16" BorderBrush="#FF0EB156" ></Button>
+                </Border>
+
+
+
+            </StackPanel>
+        </Border>
+    </StackPanel>
+
+</Window>
